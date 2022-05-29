@@ -1,0 +1,86 @@
+body {
+  background-color: #ecf0f1;
+  font-family: 'Permanent Marker', cursive;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#container {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 10fr min-content 2fr;
+  grid-template-areas: 'g' 'd' 's';
+}
+
+#container > * {
+  min-height: 0;
+  min-width: 0;
+}
+
+.playground {
+  position: relative;
+  display: grid;
+  grid-area: g;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  margin: 20px;
+  gap: 1px;
+  height: 100%;
+}
+
+.playground > * {
+  background-color: white;
+}
+
+.playground::after {
+  content: '';
+  z-index: -999;
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  bottom: -1px;
+  right: -1px;
+  background-color: black;
+}
+
+.playground.initial-game::after {
+  display: none;
+}
+
+.displayPlayers {
+  display: inline-flex;
+  grid-area: d;
+  justify-content: space-between;
+  margin-top: 10px;
+  padding: 20px;
+}
+
+.cell {
+  min-height: 0;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.coin {
+  height: 60%;
+  aspect-ratio: 1/1;
+  background-color: gold;
+  border-radius: 50%;
+}
+
+.player {
+  height: 85%;
+  aspect-ratio: 1/1;
+  background-color: blue;
+  border-radius: 50%;
+}
+
+.startTheGame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

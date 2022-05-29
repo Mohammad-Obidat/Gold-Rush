@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Import Google Icon Font-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!--Import materialize.css-->
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="node_modules/materialize-css/dist/css/materialize.css"
+      media="screen,projection"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="./images/GoldRush.png" />
+    <title>Gold Rush</title>
+  </head>
+  <body>
+    <div id="container">
+      <div class="playground initial-game">
+        <script id="player-template" type="text/x-handlebars-template">
+          {{#each matrix}}
+            {{#each this}}
+              {{#ifEmpty this}}
+                <div class='cell'></div>
+              {{/ifEmpty}}
+
+              {{#ifCoin this}}
+                <div class='cell'>
+                  <div class='coin'></div>
+                </div>
+              {{/ifCoin}}
+
+              {{#ifPlayer this}}
+                <div class='cell'>
+                  <div class='player'></div>
+                </div>
+              {{/ifPlayer}}
+            {{/each}}
+          {{/each}}
+        </script>
+      </div>
+      <div class="displayPlayers">
+        <div>Player1 Score: <span id="playerOne">0</span></div>
+        <div>Player2 Score: <span id="playerTwo">0</span></div>
+      </div>
+      <div class="startTheGame">
+        <button
+          class="btn waves-effect waves-light"
+          type="submit"
+          name="action"
+          id="startBtn"
+        >
+          Start The Game
+          <i class="material-icons right">send</i>
+        </button>
+      </div>
+    </div>
+    <script src="node_modules/handlebars/dist/handlebars.js"></script>
+    <script src="./JS/Handlebar-Helper.js"></script>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script
+      type="text/javascript"
+      src="node_modules/materialize-css/dist/js/materialize.js"
+    ></script>
+    <script src="./JS/Matrix.js"></script>
+    <script src="./JS/GoldRush.js"></script>
+    <script src="./JS/Renderer.js"></script>
+    <script src="./JS/main.js"></script>
+  </body>
+</html>
