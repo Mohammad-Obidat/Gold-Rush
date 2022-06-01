@@ -72,11 +72,16 @@ body {
   border-radius: 50%;
 }
 
-.player {
-  height: 85%;
-  aspect-ratio: 1/1;
-  background-color: blue;
-  border-radius: 50%;
+.wall {
+  color: brown;
+}
+
+.player1 {
+  color: blue;
+}
+
+.player2 {
+  color: red;
 }
 
 .startTheGame {

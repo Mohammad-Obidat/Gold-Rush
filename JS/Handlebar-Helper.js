@@ -10,8 +10,20 @@ Handlebars.registerHelper('ifCoin', function (value, options) {
   }
 });
 
-Handlebars.registerHelper('ifPlayer', function (value, options) {
-  if (value === 1 || value === 2) {
+Handlebars.registerHelper('ifWall', function (value, options) {
+  if (value === 'w') {
+    return options.fn();
+  }
+});
+
+Handlebars.registerHelper('ifPlayer1', function (value, options) {
+  if (value === 1) {
+    return options.fn();
+  }
+});
+
+Handlebars.registerHelper('ifPlayer2', function (value, options) {
+  if (value === 2) {
     return options.fn();
   }
 });
